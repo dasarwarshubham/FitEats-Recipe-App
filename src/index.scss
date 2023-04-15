@@ -1,0 +1,68 @@
+// src/index.scss
+
+// Import React Bootstrap's default styles
+@import "./_custom.scss";
+@import "~bootstrap/scss/bootstrap";
+
+// Import your custom styles
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-input {
+    @media screen and (min-width: 1200px) {
+      width: 25% !important;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 40% !important;
+    }
+    @media screen and (min-width: 768px) {
+      width: 50% !important;
+    }
+    width: 100% !important;
+  }
+}
+
+.recipe-card {
+  border: none;
+  border-radius: 0;
+  text-decoration: none !important;
+  transition: 0.25s all ease-in-out;
+  overflow: hidden;
+
+  &-image {
+    // overflow: hidden;
+    object-fit: cover;
+    transition: 0.25s all ease-in-out;
+  }
+  &:hover > &-image {
+    transform: scale(1.1);
+  }
+
+  &-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100px;
+    height: 25%;
+    top: auto;
+
+    background-color: #00000060;
+    transition: 0.25s all ease-in-out;
+  }
+  &:hover &-overlay {
+    // top: 0;
+    height: 100%;
+  }
+
+  &-title {
+    color: #ffffff;
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}
