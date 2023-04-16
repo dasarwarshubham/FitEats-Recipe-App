@@ -51,7 +51,7 @@ const Home = () => {
               className="cooking-icon"
               style={{ maxHeight: "250px", width: "100%" }}
             />
-            <h1 className="text-center">Welcome to the Recipe App!</h1>
+            <h1 className="text-center">Welcome to the FitEats Recipe App!</h1>
             <p className="text-center">
               Search for your favorite recipes and start cooking!
             </p>
