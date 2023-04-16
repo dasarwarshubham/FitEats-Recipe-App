@@ -1,7 +1,34 @@
 // import { useEffect } from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import RecipeDetails from "./pages/RecipeDetails";
+import Spinner from "react-bootstrap/Spinner";
+
+const HomePage = lazy(() =>
+  import(/* webpackChunkName: "homepage" */ "./pages/Home")
+);
+
+const RecipeDetailsPage = lazy(() =>
+  import(/* webpackChunkName: "recipedetailspage" */ "./pages/RecipeDetails")
+);
+
+const renderLoader = () => {
+  const loaderStyles = {
+    width: "100%",
+    minHeight: "65vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+  return (
+    <>
+      <div style={loaderStyles}>
+        <Spinner animation="border" variant="warning" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    </>
+  );
+};
 
 function App() {
   // useEffect(() => {
@@ -15,10 +42,12 @@ function App() {
   // }, []);
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recipe/:id" element={<RecipeDetails />} />
-      </Routes>
+      <Suspense fallback={renderLoader()}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipe/:id" element={<RecipeDetailsPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
