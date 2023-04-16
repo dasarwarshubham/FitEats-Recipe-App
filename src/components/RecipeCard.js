@@ -8,6 +8,7 @@ const RecipeCard = ({ recipe }) => {
       as={Link}
       to={`/recipe/${recipe?.uri.split("#recipe_")[1]}`}
       className="recipe-card"
+      target="_blank"
     >
       <Card.Img
         className="recipe-card-image"
