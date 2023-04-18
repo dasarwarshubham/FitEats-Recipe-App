@@ -14,6 +14,7 @@ const RecipeCard = ({ recipe }) => {
         className="recipe-card-image"
         variant="top"
         src={recipe?.image}
+        alt={recipe?.label}
       />
       <Card.ImgOverlay className="recipe-card-overlay">
         <Card.Title className="recipe-card-title">{recipe?.label}</Card.Title>

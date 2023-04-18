@@ -13,7 +13,6 @@ export const getRecipes = async () => {
         random: "false",
       },
     });
-    console.log(response);
     return response.data.hits;
   } catch (error) {
     console.error(error);
