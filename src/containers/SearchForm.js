@@ -18,7 +18,7 @@ function RecipeSearchForm({
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" aria-label="search">
           {loading ? (
             <>
               <Spinner
