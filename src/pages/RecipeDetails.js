@@ -84,7 +84,7 @@ const RecipeDetails = () => {
             <meta property="og:image" content={recipe.image} />
             <meta
               property="og:url"
-              content="%PUBLIC_URL%/recipe/c5b383d37a4185e44b1cf0d5748c5efe"
+              content={`${process.env.REACT_APP_PUBLIC_URL}/recipe/c5b383d37a4185e44b1cf0d5748c5efe`}
             />
             <meta
               name="twitter:title"
