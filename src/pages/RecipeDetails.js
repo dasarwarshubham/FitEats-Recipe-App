@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
 import {
   Container,
   Row,
@@ -62,38 +64,40 @@ const RecipeDetails = () => {
     <Container>
       {recipe && (
         <>
-          <meta
-            name="description"
-            content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
-          />
-          <meta
-            name="keywords"
-            content={`${recipe.label}, ${recipe.healthLabels.join(", ")}`}
-          />
-          <meta
-            property="og:title"
-            content={`${recipe.label} - Healthy Recipes - FitEats`}
-          />
-          <meta
-            property="og:description"
-            content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
-          />
-          <meta property="og:image" content={recipe.image} />
-          <meta
-            property="og:url"
-            content="%PUBLIC_URL%/recipe/c5b383d37a4185e44b1cf0d5748c5efe"
-          />
-          <meta
-            name="twitter:title"
-            content={`${recipe.label} - Healthy Recipes - FitEats`}
-          />
-          <meta
-            name="twitter:description"
-            content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
-          />
-          <meta name="twitter:image" content={recipe.image} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <title>{recipe.label} - Healthy Recipes - FitEats</title>
+          <Helmet>
+            <meta
+              name="description"
+              content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
+            />
+            <meta
+              name="keywords"
+              content={`${recipe.label}, ${recipe.healthLabels.join(", ")}`}
+            />
+            <meta
+              property="og:title"
+              content={`${recipe.label} - Healthy Recipes - FitEats`}
+            />
+            <meta
+              property="og:description"
+              content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
+            />
+            <meta property="og:image" content={recipe.image} />
+            <meta
+              property="og:url"
+              content="%PUBLIC_URL%/recipe/c5b383d37a4185e44b1cf0d5748c5efe"
+            />
+            <meta
+              name="twitter:title"
+              content={`${recipe.label} - Healthy Recipes - FitEats`}
+            />
+            <meta
+              name="twitter:description"
+              content="Find healthy and delicious recipes on FitEats. Explore a variety of dishes that are both nutritious and flavorful."
+            />
+            <meta name="twitter:image" content={recipe.image} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <title>{recipe.label} - Healthy Recipes - FitEats</title>
+          </Helmet>
           <Row className="my-3">
             <Col xs={12} md={6} lg={5} className="mb-4">
               <Image
