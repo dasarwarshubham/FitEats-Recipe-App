@@ -16,9 +16,9 @@ const RecipesList = ({ data, loading }) => {
   } else {
     return (
       <Row xs={1} sm={2} md={3} lg={4} className="g-4">
-        {data.map((recipe, idx) => (
+        {data?.map((recipe, idx) => (
           <Col key={`recipe_${idx}`}>
-            <RecipeCard recipe={recipe.recipe} />
+            <RecipeCard recipe={recipe?.recipe} />
           </Col>
         ))}
       </Row>
